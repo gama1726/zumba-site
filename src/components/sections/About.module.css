@@ -1,0 +1,46 @@
+.section {
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.visual {
+  position: relative;
+}
+
+.photo {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(160deg, rgba(228, 0, 124, 0.3), rgba(255, 107, 0, 0.2)),
+    url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80") center / cover;
+}
+
+.text p {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.text a {
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    aspect-ratio: 16 / 10;
+    max-height: 280px;
+  }
+}
