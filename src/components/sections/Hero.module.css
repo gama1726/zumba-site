@@ -1,0 +1,189 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: var(--header-h);
+  display: flex;
+  align-items: stretch;
+  color: var(--color-text-light);
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(20, 8, 26, 0.75) 0%, rgba(20, 8, 26, 0.5) 50%, rgba(228, 0, 124, 0.25) 100%),
+    url("https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1920&q=80") center / cover no-repeat;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 107, 0, 0.2), transparent 50%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.heading {
+  max-width: 520px;
+  align-self: center;
+}
+
+.city {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.lead {
+  margin-top: 20px;
+  font-size: 1.15rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.promo {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  flex-shrink: 0;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.dotActive {
+  background: var(--gradient-brand);
+  border-color: transparent;
+}
+
+.arrows {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.arrow {
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translate(-60%, -50%) rotate(-45deg);
+}
+
+.arrow:first-child::before {
+  transform: translate(-40%, -50%) rotate(135deg);
+}
+
+.card {
+  padding: 28px;
+  background: rgba(20, 8, 26, 0.65);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: var(--gradient-brand);
+  border-radius: 4px;
+}
+
+.promoTitle {
+  margin-top: 16px;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.promoText {
+  margin: 12px 0 24px;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.55;
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 48px;
+  }
+
+  .heading {
+    max-width: none;
+  }
+
+  .promo {
+    max-width: none;
+  }
+}
