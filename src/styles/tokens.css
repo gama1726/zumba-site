@@ -1,0 +1,29 @@
+:root {
+  --color-bg: #ffffff;
+  --color-bg-dark: #14081a;
+  --color-bg-soft: #faf7fb;
+  --color-footer: #f3eef5;
+
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b6570;
+  --color-text-light: #ffffff;
+
+  --color-magenta: #e4007c;
+  --color-orange: #ff6b00;
+  --color-yellow: #ffd600;
+
+  --gradient-brand: linear-gradient(90deg, #e4007c 0%, #ff6b00 100%);
+  --gradient-brand-hover: linear-gradient(90deg, #c9006d 0%, #e85f00 100%);
+
+  --font: "Montserrat", sans-serif;
+
+  --container-max: 1200px;
+  --container-pad: 24px;
+  --header-h: 80px;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+
+  --shadow-card: 0 8px 32px rgba(20, 8, 26, 0.08);
+}
