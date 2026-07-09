@@ -49,14 +49,18 @@
 
 .links {
   display: flex;
-  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 18px;
+  max-width: 900px;
 }
 
 .links a {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   transition: color 0.15s;
+  white-space: nowrap;
 }
 
 .links a:hover {
@@ -170,7 +174,7 @@
   font-weight: 500;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .desktopNav,
   .phoneDesktop,
   .ctaDesktop {
@@ -182,7 +186,7 @@
   }
 }
 
-@media (min-width: 901px) {
+@media (min-width: 1201px) {
   .mobileMenu {
     display: none;
   }
