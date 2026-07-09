@@ -54,3 +54,16 @@ export const pricingPlans: PricingPlan[] = [
     ],
   },
 ];
+
+export type PriceItem = {
+  name: string;
+  price: number;
+};
+
+export const priceList: PriceItem[] = [
+  { name: "Разовое групповое занятие", price: 900 },
+  { name: "Персональная тренировка", price: 2500 },
+  { name: "Сплит-тренировка (2 человека)", price: 3500 },
+  { name: "Аренда зала (1 час)", price: 4000 },
+  { name: "Пробное занятие", price: 0 },
+];
