@@ -6,8 +6,8 @@ export const site = {
   email: "ismik1@yandex.ru",
   address: "Махачкала, ул. Бейбулатова, 53(Бейбулатова 31)",
   social: {
-    telegram: "79285539600",
-    instagram: "@gracia_dance",
+    telegram: "https://t.me/+79285539600",
+    instagram: "https://instagram.com/gracia_dance",
   },
 } as const;
 

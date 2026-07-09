@@ -47,13 +47,13 @@ export function Footer() {
             <p className={styles.colTitle}>Мы в соцсетях</p>
             <ul className={styles.social}>
               <li>
-                <a href={site.social.vk} target="_blank" rel="noreferrer">
-                  ВКонтакте
+                <a href={site.social.telegram} target="_blank" rel="noreferrer">
+                  Telegram
                 </a>
               </li>
               <li>
-                <a href={site.social.telegram} target="_blank" rel="noreferrer">
-                  Telegram
+                <a href={site.social.instagram} target="_blank" rel="noreferrer">
+                  Instagram
                 </a>
               </li>
             </ul>
