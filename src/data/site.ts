@@ -5,7 +5,7 @@ export const site = {
   phoneHref: "tel:+79285539600",
   whatsapp: "79285539600",
   email: "ismik1@yandex.ru",
-  address: "Махачкала, ул. Бейбулатова, 53(Бейбулатова 31)",
+  address: "г. Махачкала, ул. Бейбулатова, 31",
   social: {
     telegram: "https://t.me/+79285539600",
     instagram: "https://instagram.com/gracia_dance",
@@ -14,7 +14,10 @@ export const site = {
 
 export const navLinks = [
   { label: "О нас", href: "#about" },
+  { label: "Направления", href: "#directions" },
   { label: "Расписание", href: "#schedule" },
-  { label: "Абонементы", href: "#pricing" },
+  { label: "Стоимость", href: "#pricing" },
+  { label: "Акции", href: "#offers" },
+  { label: "Членам клуба", href: "#members" },
   { label: "Отзывы", href: "#reviews" },
 ] as const;

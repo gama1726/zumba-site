@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { promoSlides } from "../../data/promotions";
+import { heroSlides } from "../../data/offers";
 import { site } from "../../data/site";
 import { Button } from "../ui/Button";
 import styles from "./Hero.module.css";
@@ -8,14 +8,14 @@ const INTERVAL_MS = 6000;
 
 export function Hero() {
   const [active, setActive] = useState(0);
-  const slide = promoSlides[active];
+  const slide = heroSlides[active];
 
   const next = useCallback(() => {
-    setActive((i) => (i + 1) % promoSlides.length);
+    setActive((i) => (i + 1) % heroSlides.length);
   }, []);
 
   const prev = useCallback(() => {
-    setActive((i) => (i - 1 + promoSlides.length) % promoSlides.length);
+    setActive((i) => (i - 1 + heroSlides.length) % heroSlides.length);
   }, []);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export function Hero() {
 
       <div className={`container ${styles.content}`}>
         <div className={styles.heading}>
-          <p className={styles.city}>Москва</p>
+          <p className={styles.city}>Махачкала</p>
           <h1 className={styles.title}>
             Групповые танцевальные тренировки
           </h1>
@@ -38,7 +38,7 @@ export function Hero() {
 
         <div className={styles.promo}>
           <div className={styles.dots}>
-            {promoSlides.map((s, i) => (
+            {heroSlides.map((s, i) => (
               <button
                 key={s.id}
                 type="button"
