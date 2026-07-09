@@ -1,14 +1,13 @@
 export const site = {
   name: "Zumba",
-  tagline: "танцуй, гори, будь собой",
-  phone: "+7 (495) 123-45-67",
-  phoneHref: "tel:+74951234567",
-  email: "hello@zumba-studio.ru",
-  address: "Москва, ул. Танцевальная, 12",
+  tagline: "танцуй, сияй, будь собой",
+  phone: "+7 (928) 553-96-00",
+  phoneHref: "tel:+79285539600",
+  email: "ismik1@yandex.ru",
+  address: "Махачкала, ул. Бейбулатова, 53(Бейбулатова 31)",
   social: {
-    vk: "https://vk.com",
-    telegram: "https://t.me",
-    instagram: "https://instagram.com",
+    telegram: "79285539600",
+    instagram: "@gracia_dance",
   },
 } as const;
 
