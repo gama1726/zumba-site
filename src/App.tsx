@@ -1,12 +1,14 @@
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { Hero } from "./components/sections/Hero";
-import { Benefits } from "./components/sections/Benefits";
 import { About } from "./components/sections/About";
+import { Directions } from "./components/sections/Directions";
 import { Schedule } from "./components/sections/Schedule";
 import { Pricing } from "./components/sections/Pricing";
-import { TrialForm } from "./components/sections/TrialForm";
+import { Members } from "./components/sections/Members";
 import { Reviews } from "./components/sections/Reviews";
+import { Offers } from "./components/sections/Offers";
+import { TrialForm } from "./components/sections/TrialForm";
 
 export default function App() {
   return (
@@ -14,12 +16,14 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <Benefits />
         <About />
+        <Directions />
         <Schedule />
         <Pricing />
-        <TrialForm />
+        <Members />
         <Reviews />
+        <Offers />
+        <TrialForm />
       </main>
       <Footer />
     </>
