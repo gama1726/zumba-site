@@ -1,0 +1,21 @@
+.section {
+  background: var(--color-bg-soft);
+}
+
+.layout {
+  max-width: 640px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.list li {
+  padding-left: 24px;
+  font-size: 15px;
+  line-height: 1.5;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='%23e4007c' d='M5.5 10.5 2 7l1-1 2.5 2.5L11 3l1 1z'/%3E%3C/svg%3E") left 4px no-repeat;
+}
