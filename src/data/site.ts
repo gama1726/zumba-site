@@ -3,6 +3,7 @@ export const site = {
   tagline: "танцуй, сияй, будь собой",
   phone: "+7 (928) 553-96-00",
   phoneHref: "tel:+79285539600",
+  whatsapp: "79285539600",
   email: "ismik1@yandex.ru",
   address: "Махачкала, ул. Бейбулатова, 53(Бейбулатова 31)",
   social: {

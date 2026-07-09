@@ -1,5 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { schedule } from "../../data/schedule";
+import { site } from "../../data/site";
+import { buildTrialMessage, openWhatsApp } from "../../lib/whatsapp";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Button } from "../ui/Button";
 import styles from "./TrialForm.module.css";
@@ -25,48 +27,30 @@ const slotOptions = schedule.map((s) => ({
 
 export function TrialForm() {
   const [form, setForm] = useState<FormData>(emptyForm);
-  const [sent, setSent] = useState(false);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    // пока без бэкенда — просто показываем подтверждение
-    setSent(true);
+
+    const message = buildTrialMessage({
+      name: form.name,
+      slot: form.slot,
+      phone: form.phone || undefined,
+      email: form.email || undefined,
+    });
+
+    openWhatsApp(site.whatsapp, message);
   }
 
   function update(field: keyof FormData, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
   }
 
-  if (sent) {
-    return (
-      <section className={`section ${styles.section}`} id="trial">
-        <div className="container">
-          <div className={styles.success}>
-            <h2 className={styles.successTitle}>Заявка отправлена</h2>
-            <p>
-              Мы перезвоним в течение дня и подтвердим время. До встречи на
-              танцполе!
-            </p>
-            <Button
-              onClick={() => {
-                setSent(false);
-                setForm(emptyForm);
-              }}
-            >
-              Отправить ещё одну
-            </Button>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section className={`section ${styles.section}`} id="trial">
       <div className="container">
         <div className={styles.layout}>
-          <SectionTitle subtitle="Оставь контакты — мы перезвоним и подберём удобное время">
-            Запись на пробное занятие
+          <SectionTitle subtitle="Заполни форму — откроется WhatsApp с готовым сообщением, останется только отправить">
+            Запись на занятие
           </SectionTitle>
 
           <form className={styles.form} onSubmit={handleSubmit}>
@@ -85,7 +69,6 @@ export function TrialForm() {
               <span>Телефон</span>
               <input
                 type="tel"
-                required
                 placeholder="+7 (___) ___-__-__"
                 value={form.phone}
                 onChange={(e) => update("phone", e.target.value)}
@@ -122,13 +105,11 @@ export function TrialForm() {
 
             <label className={styles.check}>
               <input type="checkbox" required />
-              <span>
-                Согласен на обработку персональных данных
-              </span>
+              <span>Согласен на обработку персональных данных</span>
             </label>
 
             <Button type="submit" size="lg">
-              Отправить заявку
+              Записаться в WhatsApp
             </Button>
           </form>
         </div>
