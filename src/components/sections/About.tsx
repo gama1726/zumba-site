@@ -31,7 +31,7 @@ export function About() {
             </p>
 
             <Button href="#trial" size="lg">
-              Прийти на пробное
+              Записаться
             </Button>
           </div>
         </div>
