@@ -1,5 +1,5 @@
 export const site = {
-  name: "Zumba",
+  name: "Энергия",
   tagline: "танцуй, сияй, будь собой",
   phone: "+7 (928) 553-96-00",
   phoneHref: "tel:+79285539600",
