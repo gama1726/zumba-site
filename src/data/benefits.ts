@@ -10,13 +10,13 @@ export const benefits: Benefit[] = [
     id: "energy",
     title: "Заряд на весь день",
     description: "45–60 минут движения под латино-ритмы — и настроение уже другое.",
-    href: "#about",
+    href: "#directions",
   },
   {
     id: "any-level",
     title: "Подходит любому уровню",
     description: "Не нужен опыт в танцах. Главное — двигаться в своём темпе и получать удовольствие.",
-    href: "#about",
+    href: "#directions",
   },
   {
     id: "community",
