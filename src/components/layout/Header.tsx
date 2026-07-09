@@ -17,14 +17,47 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={`container ${styles.inner}`}>
-        <a href="#" className={styles.logo} onClick={closeMenu}>
-          {site.name}
-          <span className={styles.dot} />
-        </a>
+      <div className={styles.bar}>
+        <div className={`container ${styles.inner}`}>
+          <a href="#" className={styles.logo} onClick={closeMenu}>
+            {site.name}
+            <span className={styles.dot} />
+          </a>
 
-        <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
-          <ul className={styles.links}>
+          <nav className={styles.desktopNav} aria-label="Основная навигация">
+            <ul className={styles.links}>
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className={styles.actions}>
+            <a href={site.phoneHref} className={styles.phoneDesktop}>
+              {site.phone}
+            </a>
+            <Button href="#trial" className={styles.ctaDesktop}>
+              Записаться
+            </Button>
+            <button
+              type="button"
+              className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
+              aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}
+        aria-hidden={!menuOpen}
+      >
+        <nav className={styles.mobileNav} aria-label="Мобильная навигация">
+          <ul className={styles.mobileLinks}>
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a href={link.href} onClick={closeMenu}>
@@ -34,7 +67,7 @@ export function Header() {
             ))}
           </ul>
 
-          <div className={styles.navFooter}>
+          <div className={styles.mobileFooter}>
             <a href={site.phoneHref} className={styles.phone}>
               {site.phone}
             </a>
@@ -43,21 +76,6 @@ export function Header() {
             </Button>
           </div>
         </nav>
-
-        <div className={styles.actions}>
-          <a href={site.phoneHref} className={styles.phoneDesktop}>
-            {site.phone}
-          </a>
-          <Button href="#trial" className={styles.ctaDesktop}>
-            Записаться
-          </Button>
-          <button
-            type="button"
-            className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
-            aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
-            onClick={() => setMenuOpen((v) => !v)}
-          />
-        </div>
       </div>
     </header>
   );
