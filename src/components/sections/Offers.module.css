@@ -1,0 +1,104 @@
+.section {
+  background: linear-gradient(180deg, #1a0d22 0%, var(--color-bg-dark) 100%);
+  color: var(--color-text-light);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.tab {
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.tabActive {
+  background: var(--gradient-brand);
+  border-color: transparent;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+}
+
+.cardPlain {
+  justify-content: flex-start;
+}
+
+.badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  background: var(--gradient-brand);
+  border-radius: 4px;
+}
+
+.title {
+  margin-top: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cardPlain .title {
+  margin-top: 0;
+}
+
+.text {
+  margin-top: 8px;
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.until {
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.cardBtn {
+  margin-top: 16px;
+  align-self: flex-start;
+}
+
+.cta {
+  margin-top: 32px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
