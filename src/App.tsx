@@ -9,6 +9,7 @@ import { Members } from "./components/sections/Members";
 import { Reviews } from "./components/sections/Reviews";
 import { Offers } from "./components/sections/Offers";
 import { TrialForm } from "./components/sections/TrialForm";
+import { FloatingPromo } from "./components/ui/FloatingPromo";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <TrialForm />
       </main>
       <Footer />
+      <FloatingPromo />
     </>
   );
 }

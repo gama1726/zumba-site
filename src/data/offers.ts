@@ -14,7 +14,26 @@ export type Discount = {
   text: string;
 };
 
+export const floatingOffer = {
+  id: "annual-311",
+  label: "Годовой абонемент",
+  price: 311,
+  unit: "одно занятие",
+  footnote: "при оплате 44 900 ₽ за год",
+  detail: "44 900 ₽ ÷ 12 мес ÷ 12 занятий",
+  href: "#pricing",
+};
+
 export const promotions: Promotion[] = [
+  {
+    id: "annual-311",
+    badge: "ХИТ",
+    title: "Годовой абонемент — 311 ₽ за занятие",
+    text: "При оплате 44 900 ₽ за год выходит около 311 ₽ за одно занятие — заметно выгоднее разового визита за 1 000 ₽.",
+    until: "пока действует предложение",
+    cta: "Смотреть тариф",
+    href: "#pricing",
+  },
   {
     id: "trial",
     badge: "СТАРТ",

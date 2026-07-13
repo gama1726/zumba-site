@@ -19,8 +19,6 @@ export const pricingPlans: PricingPlan[] = [
     priceFrom: 5800,
     priceTo: 6700,
     period: "в месяц",
-    highlighted: true,
-    badge: "Хит",
     features: [
       "Посещение занятий по одному направлению",
       "Групповые тренировки по расписанию",
@@ -71,10 +69,12 @@ export const pricingPlans: PricingPlan[] = [
     priceFrom: 39900,
     priceTo: 44900,
     period: "на год",
+    highlighted: true,
+    badge: "311 ₽/зан",
     features: [
       "Выгодные условия при оплате за год",
+      "От 311 ₽ за занятие при оплате 44 900 ₽",
       "Подходит для тех, кто занимается постоянно",
-      "Точная сумма зависит от выбранного формата",
     ],
   },
 ];
