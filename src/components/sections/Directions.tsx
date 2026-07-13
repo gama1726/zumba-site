@@ -41,7 +41,9 @@ export function Directions() {
           ))}
         </ul>
 
-        <p className={styles.note}>{studioNote}</p>
+        {activeId !== "active-longevity" && (
+          <p className={styles.note}>{studioNote}</p>
+        )}
       </div>
     </section>
   );
