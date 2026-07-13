@@ -10,8 +10,19 @@ function formatPrice(n: number) {
   return n.toLocaleString("ru-RU");
 }
 
-function formatServicePrice(price: number) {
-  return price === 0 ? "Бесплатно" : `${formatPrice(price)} ₽`;
+function formatAmount(item: { price?: number; priceFrom?: number; priceTo?: number }) {
+  if (item.priceFrom !== undefined && item.priceTo !== undefined) {
+    return `${formatPrice(item.priceFrom)} – ${formatPrice(item.priceTo)} ₽`;
+  }
+  if (item.price !== undefined) {
+    return `${formatPrice(item.price)} ₽`;
+  }
+  return "—";
+}
+
+function formatServicePrice(item: { price?: number; priceFrom?: number; priceTo?: number }) {
+  if (item.price === 0) return "Бесплатно";
+  return formatAmount(item);
 }
 
 export function Pricing() {
@@ -73,10 +84,7 @@ export function Pricing() {
                   <p className={styles.planSub}>{plan.subtitle}</p>
                 </div>
                 <div className={styles.priceBlock}>
-                  {plan.oldPrice && (
-                    <span className={styles.oldPrice}>{formatPrice(plan.oldPrice)} ₽</span>
-                  )}
-                  <span className={styles.price}>{formatPrice(plan.price)} ₽</span>
+                  <span className={styles.price}>{formatAmount(plan)}</span>
                   <span className={styles.period}>{plan.period}</span>
                 </div>
               </div>
@@ -97,7 +105,7 @@ export function Pricing() {
             {priceList.map((item) => (
               <li key={item.name} className={styles.priceRow}>
                 <span>{item.name}</span>
-                <span className={styles.servicePrice}>{formatServicePrice(item.price)}</span>
+                <span className={styles.servicePrice}>{formatServicePrice(item)}</span>
               </li>
             ))}
           </ul>

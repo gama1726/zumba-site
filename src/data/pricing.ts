@@ -2,8 +2,9 @@ export type PricingPlan = {
   id: string;
   name: string;
   subtitle: string;
-  price: number;
-  oldPrice?: number;
+  price?: number;
+  priceFrom?: number;
+  priceTo?: number;
   period: string;
   features: string[];
   highlighted?: boolean;
@@ -12,58 +13,80 @@ export type PricingPlan = {
 
 export const pricingPlans: PricingPlan[] = [
   {
-    id: "single",
-    name: "Разовое",
-    subtitle: "Попробовать или зайти между делом",
-    price: 900,
-    period: "за занятие",
-    features: [
-      "Одно групповое занятие",
-      "Доступ в раздевалку и душ",
-      "Без заморозки",
-    ],
-  },
-  {
-    id: "month",
-    name: "Месяц",
-    subtitle: "Самый популярный вариант",
-    price: 4500,
-    oldPrice: 5400,
-    period: "8 занятий",
+    id: "one-direction",
+    name: "1 направление",
+    subtitle: "Абонемент на одно выбранное направление",
+    priceFrom: 5800,
+    priceTo: 6700,
+    period: "в месяц",
     highlighted: true,
     badge: "Хит",
     features: [
-      "8 занятий в течение 30 дней",
-      "Любые группы по расписанию",
-      "Заморозка 5 дней",
-      "Скидка 10% на мерч",
+      "Посещение занятий по одному направлению",
+      "Групповые тренировки по расписанию",
+      "Подходит для регулярных занятий",
     ],
   },
   {
-    id: "season",
-    name: "Сезон",
-    subtitle: "Для тех, кто вошёл в ритм",
-    price: 11000,
-    oldPrice: 13500,
-    period: "24 занятия",
+    id: "two-directions",
+    name: "2 направления",
+    subtitle: "Абонемент на два направления",
+    price: 7500,
+    period: "в месяц",
     features: [
-      "24 занятия за 90 дней",
-      "Приоритетная запись",
-      "Заморозка 14 дней",
-      "1 персональная консультация",
+      "Два направления на выбор",
+      "Групповые занятия по расписанию",
+      "Удобно совмещать фитнес и танцы",
+    ],
+  },
+  {
+    id: "mix12",
+    name: "Микс 12",
+    subtitle: "Абонемент на смешанные занятия",
+    price: 6900,
+    period: "12 занятий",
+    features: [
+      "12 занятий в разных направлениях",
+      "Гибкий выбор групп по расписанию",
+      "Подходит, если хочется разнообразия",
+    ],
+  },
+  {
+    id: "personal",
+    name: "Персональный",
+    subtitle: "Абонемент на индивидуальные занятия",
+    priceFrom: 15000,
+    priceTo: 25000,
+    period: "абонемент",
+    features: [
+      "Индивидуальные занятия с тренером",
+      "Программа под ваши цели",
+      "Стоимость зависит от формата и количества занятий",
+    ],
+  },
+  {
+    id: "annual",
+    name: "Годовой",
+    subtitle: "Долгосрочный абонемент",
+    priceFrom: 39900,
+    priceTo: 44900,
+    period: "на год",
+    features: [
+      "Выгодные условия при оплате за год",
+      "Подходит для тех, кто занимается постоянно",
+      "Точная сумма зависит от выбранного формата",
     ],
   },
 ];
 
 export type PriceItem = {
   name: string;
-  price: number;
+  price?: number;
+  priceFrom?: number;
+  priceTo?: number;
 };
 
 export const priceList: PriceItem[] = [
-  { name: "Разовое групповое занятие", price: 900 },
-  { name: "Персональная тренировка", price: 2500 },
-  { name: "Сплит-тренировка (2 человека)", price: 3500 },
-  { name: "Аренда зала (1 час)", price: 4000 },
-  { name: "Пробное занятие", price: 0 },
+  { name: "Разовое групповое занятие", price: 1000 },
+  { name: "Разовое индивидуальное занятие", priceFrom: 2000, priceTo: 2500 },
 ];
