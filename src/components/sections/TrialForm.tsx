@@ -49,9 +49,13 @@ export function TrialForm() {
     <section className={`section ${styles.section}`} id="trial">
       <div className="container">
         <div className={styles.layout}>
-          <SectionTitle subtitle="Заполни форму — откроется WhatsApp с готовым сообщением, останется только отправить">
-            Запись на занятие
-          </SectionTitle>
+          <div className={styles.intro}>
+            <SectionTitle
+              subtitle="Заполни форму — откроется WhatsApp с готовым сообщением, останется только отправить"
+            >
+              Запись на занятие
+            </SectionTitle>
+          </div>
 
           <form className={styles.form} onSubmit={handleSubmit}>
             <label className={styles.field}>
@@ -108,7 +112,7 @@ export function TrialForm() {
               <span>Согласен на обработку персональных данных</span>
             </label>
 
-            <Button type="submit" size="lg">
+            <Button type="submit" size="lg" className={styles.formSubmit}>
               Записаться в WhatsApp
             </Button>
           </form>

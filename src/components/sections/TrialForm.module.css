@@ -4,16 +4,28 @@
 
 .layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1fr;
+  gap: 28px;
   align-items: start;
+  min-width: 0;
+}
+
+.layout > * {
+  min-width: 0;
+}
+
+.intro {
+  width: 100%;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 32px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 24px 20px;
   background: #fff;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
@@ -33,6 +45,8 @@
 
 .field input,
 .field select {
+  width: 100%;
+  max-width: 100%;
   padding: 14px 16px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: var(--radius-sm);
@@ -57,7 +71,18 @@
 
 .check input {
   margin-top: 3px;
+  flex-shrink: 0;
   accent-color: var(--color-magenta);
+}
+
+.formSubmit {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal !important;
+  text-transform: none !important;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
 }
 
 .success {
@@ -82,9 +107,13 @@
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 901px) {
   .layout {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .form {
+    padding: 32px;
   }
 }

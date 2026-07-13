@@ -35,6 +35,17 @@
   margin-right: auto;
 }
 
+@media (max-width: 900px) {
+  .title {
+    font-size: clamp(1.5rem, 6vw, 1.75rem);
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    padding: 0 4px;
+  }
+}
+
 @media (max-width: 768px) {
   .wrap {
     margin-bottom: 28px;

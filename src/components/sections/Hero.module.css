@@ -186,4 +186,8 @@
   .promo {
     max-width: none;
   }
+
+  .card {
+    padding: 24px 20px;
+  }
 }

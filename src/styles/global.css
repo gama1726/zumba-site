@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
 }
 
 body {
@@ -61,5 +62,11 @@ ul {
   :root {
     --container-pad: 16px;
     --header-h: 68px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 48px 0;
   }
 }

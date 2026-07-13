@@ -80,6 +80,15 @@
 }
 
 @media (max-width: 640px) {
+  .block {
+    padding: 20px 16px;
+  }
+
+  .days {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
   .row {
     grid-template-columns: 1fr;
     gap: 6px;

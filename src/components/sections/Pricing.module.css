@@ -131,12 +131,21 @@
 }
 
 @media (max-width: 520px) {
+  .card {
+    padding: 24px 20px;
+  }
+
   .cardHead {
     flex-direction: column;
   }
 
   .priceBlock {
     text-align: left;
+  }
+
+  .tabs .tab {
+    padding: 10px 16px;
+    font-size: 13px;
   }
 }
 
