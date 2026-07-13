@@ -1,89 +1,91 @@
-.tableWrap {
-  overflow-x: auto;
+.blocks {
+  display: grid;
+  gap: 20px;
+}
+
+.block {
+  padding: 24px;
+  background: #fff;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
 }
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  font-size: 15px;
+.days {
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-.table th {
-  padding: 16px 20px;
-  text-align: left;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-text-muted);
-  background: var(--color-bg-soft);
+.classes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.table td {
-  padding: 18px 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.table tbody tr:last-child td {
+.row:last-child {
   border-bottom: none;
 }
 
-.table tbody tr:hover {
-  background: rgba(228, 0, 124, 0.03);
+.time {
+  font-weight: 700;
+  font-size: 15px;
 }
 
-.levelEasy,
-.levelMid,
-.levelAll {
+.title {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.badgeGroup,
+.badgeIndividual {
   display: inline-block;
   padding: 4px 10px;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   border-radius: 20px;
+  white-space: nowrap;
 }
 
-.levelEasy {
-  background: rgba(255, 214, 0, 0.2);
-  color: #9a7b00;
-}
-
-.levelMid {
-  background: rgba(255, 107, 0, 0.15);
-  color: #c45500;
-}
-
-.levelAll {
+.badgeGroup {
   background: rgba(228, 0, 124, 0.1);
   color: var(--color-magenta);
 }
 
+.badgeIndividual {
+  background: rgba(255, 107, 0, 0.15);
+  color: #c45500;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.individual {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.12);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
 @media (max-width: 640px) {
-  .table thead {
-    display: none;
+  .row {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
-  .table tr {
-    display: block;
-    padding: 16px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  .table td {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 6px 0;
-    border: none;
-  }
-
-  .table td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: var(--color-text-muted);
-    flex-shrink: 0;
+  .badgeGroup {
+    justify-self: start;
   }
 }

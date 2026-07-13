@@ -1,17 +1,79 @@
-export type ClassSlot = {
-  day: string;
+export type ScheduleClass = {
   time: string;
   title: string;
-  instructor: string;
-  level: "начальный" | "средний" | "все уровни";
+  format: "group";
 };
 
-export const schedule: ClassSlot[] = [
-  { day: "Пн", time: "19:00", title: "Zumba Fitness", instructor: "Алина", level: "все уровни" },
-  { day: "Вт", time: "10:00", title: "Zumba Toning", instructor: "Мария", level: "средний" },
-  { day: "Ср", time: "19:30", title: "Zumba Fitness", instructor: "Алина", level: "все уровни" },
-  { day: "Чт", time: "18:00", title: "Zumba Gold", instructor: "Ольга", level: "начальный" },
-  { day: "Пт", time: "20:00", title: "Zumba Party", instructor: "Мария", level: "все уровни" },
-  { day: "Сб", time: "11:00", title: "Zumba Fitness", instructor: "Алина", level: "все уровни" },
-  { day: "Вс", time: "12:00", title: "Семейная Zumba", instructor: "Ольга", level: "начальный" },
+export type ScheduleBlock = {
+  id: string;
+  daysLabel: string;
+  classes: ScheduleClass[];
+  individualNote: string;
+};
+
+export const scheduleBlocks: ScheduleBlock[] = [
+  {
+    id: "mon-wed-fri",
+    daysLabel: "Понедельник, среда, пятница",
+    classes: [
+      {
+        time: "17:30",
+        title: "Функциональный тренинг + Zumba® Fitness",
+        format: "group",
+      },
+      {
+        time: "19:00",
+        title: "Йога-калланетика и стретчинг",
+        format: "group",
+      },
+      {
+        time: "20:15",
+        title: "Zumba® Fitness",
+        format: "group",
+      },
+    ],
+    individualNote: "В остальные свободные часы в эти дни — индивидуальные занятия",
+  },
+  {
+    id: "tue-thu",
+    daysLabel: "Вторник, четверг",
+    classes: [
+      {
+        time: "08:00",
+        title: "«Твоя здоровая спина и красивая осанка»",
+        format: "group",
+      },
+      {
+        time: "19:00",
+        title: "Восточные танцы",
+        format: "group",
+      },
+    ],
+    individualNote: "В остальные часы в эти дни — индивидуальные занятия",
+  },
+  {
+    id: "sat",
+    daysLabel: "Суббота",
+    classes: [
+      {
+        time: "08:00",
+        title: "«Твоя здоровая спина и красивая осанка»",
+        format: "group",
+      },
+    ],
+    individualNote: "В остальные часы — индивидуальные занятия",
+  },
 ];
+
+/** Плоский список групповых занятий — для формы записи */
+export const groupSchedule = scheduleBlocks.flatMap((block) =>
+  block.classes.map((item) => {
+    const shortDay = block.daysLabel.split(",")[0].trim();
+    return {
+      day: shortDay,
+      daysLabel: block.daysLabel,
+      time: item.time,
+      title: item.title,
+    };
+  }),
+);

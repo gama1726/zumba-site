@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { schedule } from "../../data/schedule";
+import { groupSchedule } from "../../data/schedule";
 import { site } from "../../data/site";
 import { buildTrialMessage, openWhatsApp } from "../../lib/whatsapp";
 import { SectionTitle } from "../ui/SectionTitle";
@@ -20,9 +20,9 @@ const emptyForm: FormData = {
   slot: "",
 };
 
-const slotOptions = schedule.map((s) => ({
-  value: `${s.day} ${s.time} — ${s.title}`,
-  label: `${s.day}, ${s.time} — ${s.title}`,
+const slotOptions = groupSchedule.map((s) => ({
+  value: `${s.daysLabel}, ${s.time} — ${s.title}`,
+  label: `${s.daysLabel}, ${s.time} — ${s.title}`,
 }));
 
 export function TrialForm() {
