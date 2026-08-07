@@ -1,6 +1,6 @@
 export const site = {
   name: "Энергия",
-  tagline: "танцуй, сияй, будь собой",
+  tagline: "Зажги свой огонь — сияй!",
   phone: "+7 (928) 553-96-00",
   phoneHref: "tel:+79285539600",
   whatsapp: "79285539600",
