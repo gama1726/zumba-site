@@ -31,7 +31,9 @@ export function Hero() {
         <div className={styles.heading}>
           <p className={styles.city}>Махачкала</p>
           <h1 className={styles.title}>
-            Групповые танцевальные тренировки
+            Фитнес и танцы
+            <br />
+            Групповые и персональные тренировки
           </h1>
           <p className={styles.lead}>{site.tagline}</p>
         </div>
