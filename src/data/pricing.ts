@@ -90,4 +90,6 @@ export type PriceItem = {
 export const priceList: PriceItem[] = [
   { name: "Разовое групповое занятие", price: 1000 },
   { name: "Разовое индивидуальное занятие", priceFrom: 2000, priceTo: 2500 },
+  { name: "Заморозка абонемента — неделя", price: 800 },
+  { name: "Заморозка абонемента — месяц", price: 1300 },
 ];
