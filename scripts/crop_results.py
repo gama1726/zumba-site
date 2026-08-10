@@ -8,6 +8,7 @@ dest.mkdir(parents=True, exist_ok=True)
 ids = {
     "back-1": "image-b40ef26a-ed76-435e-be5f-d99c1e4fd534.png",
     "back-2": "image-939bfa05-5a93-471e-ab7c-790f8dc2fce1.png",
+    "back-90": "image-a95d22ba-b2e5-4957-89c1-b1377a9d2379.png",
     "front-weight": "image-20c5ec4e-cd14-493a-b8f2-2849f05198ea.png",
     "back-weight": "image-eb3bcd3f-71a3-4b57-bcce-f2b0b0763b3b.png",
     "side-1": "image-b222e5c9-2235-49f9-8812-f440f3944251.png",
@@ -21,6 +22,7 @@ ids = {
 crops = {
     "back-1": (0.02, 0.12, 0.98, 0.90),  # cut phone UI
     "back-2": (0.0, 0.0, 1.0, 1.0),
+    "back-90": (0.0, 0.0, 1.0, 1.0),
     "front-weight": (0.01, 0.01, 0.99, 0.97),
     "back-weight": (0.0, 0.04, 1.0, 0.99),
     "side-1": (0.0, 0.0, 1.0, 0.97),

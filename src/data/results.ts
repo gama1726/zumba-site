@@ -19,6 +19,12 @@ export const results: ResultCase[] = [
     text: "Улучшение осанки и выравнивание спины за курс занятий.",
   },
   {
+    id: "back-90",
+    src: "/results/back-90.jpg",
+    title: "90 лет — курс «Здоровая спина»",
+    text: "Возраст не помеха: заметное выпрямление осанки на курсе.",
+  },
+  {
     id: "front-weight",
     src: "/results/front-weight.jpg",
     title: "Тренер Роза",
