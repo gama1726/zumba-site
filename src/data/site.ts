@@ -20,5 +20,6 @@ export const navLinks = [
   { label: "Стоимость", href: "#pricing" },
   { label: "Акции", href: "#offers" },
   { label: "Членам клуба", href: "#members" },
+  { label: "Результаты", href: "#results" },
   { label: "Отзывы", href: "#reviews" },
 ] as const;

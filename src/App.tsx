@@ -8,6 +8,7 @@ import { Schedule } from "./components/sections/Schedule";
 import { Pricing } from "./components/sections/Pricing";
 import { Members } from "./components/sections/Members";
 import { Reviews } from "./components/sections/Reviews";
+import { Results } from "./components/sections/Results";
 import { Offers } from "./components/sections/Offers";
 import { TrialForm } from "./components/sections/TrialForm";
 import { FloatingPromo } from "./components/ui/FloatingPromo";
@@ -24,6 +25,7 @@ export default function App() {
         <Schedule />
         <Pricing />
         <Members />
+        <Results />
         <Reviews />
         <Offers />
         <TrialForm />
