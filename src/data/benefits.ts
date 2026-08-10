@@ -23,7 +23,7 @@ export const benefits: Benefit[] = [
   {
     id: "community",
     title: "Живое комьюнити",
-    description: "Группы до 20 человек, дружелюбная атмосфера и общие челленджи.",
+    description: "Группы до 15 человек, дружелюбная атмосфера и общие челленджи.",
     href: "#reviews",
   },
   {
