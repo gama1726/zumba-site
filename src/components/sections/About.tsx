@@ -1,5 +1,6 @@
 import { benefits } from "../../data/benefits";
 import { aboutPhoto } from "../../data/gallery";
+import { site } from "../../data/site";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Button } from "../ui/Button";
 import styles from "./About.module.css";
@@ -39,9 +40,19 @@ export function About() {
             Здесь движение — это забота о себе и путь к внутренней энергии,
             </p>
 
-            <Button href="#trial" size="lg">
-              Записаться
-            </Button>
+            <div className={styles.actions}>
+              <Button href="#trial" size="lg">
+                Записаться
+              </Button>
+              <a
+                href={site.social.instagram}
+                className={styles.instagram}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram {site.social.instagramHandle}
+              </a>
+            </div>
           </div>
         </div>
 

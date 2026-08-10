@@ -8,7 +8,8 @@ export const site = {
   address: "г. Махачкала, ул. Бейбулатова, 31",
   social: {
     telegram: "https://t.me/+79285539600",
-    instagram: "https://instagram.com/gracia_dance",
+    instagram: "https://www.instagram.com/gracia_dance/",
+    instagramHandle: "@gracia_dance",
   },
 } as const;
 

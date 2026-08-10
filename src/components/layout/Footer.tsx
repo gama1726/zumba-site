@@ -53,7 +53,7 @@ export function Footer() {
               </li>
               <li>
                 <a href={site.social.instagram} target="_blank" rel="noreferrer">
-                  Instagram
+                  Instagram {site.social.instagramHandle}
                 </a>
               </li>
             </ul>
