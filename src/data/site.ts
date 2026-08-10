@@ -14,6 +14,7 @@ export const site = {
 
 export const navLinks = [
   { label: "О нас", href: "#about" },
+  { label: "Студия", href: "#gallery" },
   { label: "Направления", href: "#directions" },
   { label: "Расписание", href: "#schedule" },
   { label: "Стоимость", href: "#pricing" },

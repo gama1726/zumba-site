@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { heroSlides } from "../../data/offers";
+import { heroPhoto } from "../../data/gallery";
 import { site } from "../../data/site";
 import { Button } from "../ui/Button";
 import styles from "./Hero.module.css";
@@ -25,7 +26,11 @@ export function Hero() {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.bg} aria-hidden />
+      <div
+        className={styles.bg}
+        style={{ backgroundImage: `url(${heroPhoto})` }}
+        aria-hidden
+      />
 
       <div className={`container ${styles.content}`}>
         <div className={styles.heading}>

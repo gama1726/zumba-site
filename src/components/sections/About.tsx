@@ -1,4 +1,5 @@
 import { benefits } from "../../data/benefits";
+import { aboutPhoto } from "../../data/gallery";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Button } from "../ui/Button";
 import styles from "./About.module.css";
@@ -8,8 +9,12 @@ export function About() {
     <section className={`section ${styles.section}`} id="about">
       <div className="container">
         <div className={styles.layout}>
-          <div className={styles.visual} aria-hidden>
-            <div className={styles.photo} />
+          <div className={styles.visual}>
+            <img
+              className={styles.photo}
+              src={aboutPhoto}
+              alt="Зал фитнес-студии Энергия в Махачкале"
+            />
           </div>
 
           <div className={styles.text}>
