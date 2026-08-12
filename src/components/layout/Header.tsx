@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import { site, navLinks } from "../../data/site";
 import { Button } from "../ui/Button";
 import styles from "./Header.module.css";
@@ -15,6 +15,22 @@ export function Header() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith("#") || href.length < 2) return;
+
+    event.preventDefault();
+    closeMenu();
+
+    const id = href.slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    window.setTimeout(() => {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.pushState(null, "", href);
+    }, 50);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.bar}>
@@ -28,7 +44,9 @@ export function Header() {
             <ul className={styles.links}>
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href}>{link.label}</a>
+                  <a href={link.href} onClick={(e) => handleNavClick(e, link.href)}>
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -60,7 +78,10 @@ export function Header() {
           <ul className={styles.mobileLinks}>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={closeMenu}>
+                <a
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                >
                   {link.label}
                 </a>
               </li>

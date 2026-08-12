@@ -54,6 +54,10 @@ ul {
   padding: 80px 0;
 }
 
+section[id] {
+  scroll-margin-top: var(--header-h);
+}
+
 @media (max-width: 768px) {
   .section {
     padding: 56px 0;
