@@ -95,6 +95,17 @@
   color: var(--color-text-muted);
 }
 
+.videoGroup + .videoGroup {
+  margin-top: 36px;
+}
+
+.videoGroupTitle {
+  margin-bottom: 14px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
 .videoGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

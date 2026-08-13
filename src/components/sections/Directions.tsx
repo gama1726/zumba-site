@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { directions, studioNote } from "../../data/directions";
+import { directionVideoAnchors } from "../../data/videos";
 import { SectionTitle } from "../ui/SectionTitle";
 import styles from "./Directions.module.css";
 
@@ -37,8 +38,8 @@ export function Directions() {
             <li key={item.id} className={styles.card}>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardText}>{item.text}</p>
-              {(item.id === "zumba-fitness" || item.id === "zumba-gold") && (
-                <a className={styles.videoLink} href="#zumba-videos">
+              {directionVideoAnchors[item.id] && (
+                <a className={styles.videoLink} href={directionVideoAnchors[item.id]}>
                   Смотреть видео с занятий →
                 </a>
               )}

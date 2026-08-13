@@ -1,5 +1,5 @@
 import { galleryPhotos } from "../../data/gallery";
-import { zumbaVideos } from "../../data/videos";
+import { studioVideos, videoGroups } from "../../data/videos";
 import { SectionTitle } from "../ui/SectionTitle";
 import styles from "./Gallery.module.css";
 
@@ -28,28 +28,43 @@ export function Gallery() {
           ))}
         </ul>
 
-        <div className={styles.videosBlock} id="zumba-videos">
-          <h3 className={styles.videosTitle}>Zumba® Fitness в действии</h3>
+        <div className={styles.videosBlock} id="studio-videos">
+          <h3 className={styles.videosTitle}>Видео с занятий</h3>
           <p className={styles.videosSubtitle}>
-            Короткие фрагменты с групповых занятий — почувствуйте атмосферу
-            студии @gracia_dance
+            Фрагменты реальных тренировок в студии @gracia_dance
           </p>
 
-          <ul className={styles.videoGrid}>
-            {zumbaVideos.map((video) => (
-              <li key={video.id} className={styles.videoItem}>
-                <video
-                  className={styles.video}
-                  src={video.src}
-                  title={video.title}
-                  controls
-                  playsInline
-                  preload="metadata"
-                />
-                <span className={styles.videoCaption}>{video.caption}</span>
-              </li>
-            ))}
-          </ul>
+          {videoGroups.map((group) => {
+            const videos = studioVideos.filter((v) => v.category === group.id);
+            if (videos.length === 0) return null;
+
+            return (
+              <div
+                key={group.id}
+                className={styles.videoGroup}
+                id={group.anchor}
+              >
+                <h4 className={styles.videoGroupTitle}>{group.title}</h4>
+                <ul className={styles.videoGrid}>
+                  {videos.map((video) => (
+                    <li key={video.id} className={styles.videoItem}>
+                      <video
+                        className={styles.video}
+                        src={video.src}
+                        title={video.title}
+                        controls
+                        playsInline
+                        preload="metadata"
+                      />
+                      <span className={styles.videoCaption}>
+                        {video.caption}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
