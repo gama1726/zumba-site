@@ -66,4 +66,10 @@ export const results: ResultCase[] = [
     title: "Новый силуэт",
     text: "От повседневного «до» — к уверенному «после».",
   },
+  {
+    id: "mirror-transform",
+    src: "/results/mirror-transform.jpg",
+    title: "До и после",
+    text: "Регулярные тренировки — видимое изменение фигуры и самоощущения.",
+  },
 ];

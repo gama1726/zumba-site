@@ -37,6 +37,11 @@ export function Directions() {
             <li key={item.id} className={styles.card}>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardText}>{item.text}</p>
+              {(item.id === "zumba-fitness" || item.id === "zumba-gold") && (
+                <a className={styles.videoLink} href="#zumba-videos">
+                  Смотреть видео с занятий →
+                </a>
+              )}
             </li>
           ))}
         </ul>

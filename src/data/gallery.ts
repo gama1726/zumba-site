@@ -32,6 +32,12 @@ export const galleryPhotos: GalleryPhoto[] = [
     caption: "Zumba Fitness",
   },
   {
+    id: "zumba-promo",
+    src: "/studio/zumba-promo.png",
+    alt: "Zumba Fitness в студии @gracia_dance",
+    caption: "Zumba® Fitness",
+  },
+  {
     id: "class-stretch",
     src: "/studio/class-stretch.png",
     alt: "Растяжка и работа с детьми",

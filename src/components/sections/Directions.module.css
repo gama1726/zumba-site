@@ -66,6 +66,19 @@
   color: var(--color-text-muted);
 }
 
+.videoLink {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-magenta);
+  text-decoration: none;
+}
+
+.videoLink:hover {
+  text-decoration: underline;
+}
+
 .note {
   max-width: 640px;
   margin: 32px auto 0;
